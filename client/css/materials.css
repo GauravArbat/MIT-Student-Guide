@@ -1,0 +1,313 @@
+/* Loader styles */
+.loader-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.loader {
+  color: var(--third-color);
+  position: relative;
+  font-size: 50px;
+  letter-spacing: 3.3px;
+  box-sizing: border-box;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
+  height: 28px;
+  width: 5.15px;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader1 1s linear infinite alternate;
+}
+
+.loader::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 125px;
+  top: 2px;
+  border-radius: 50%;
+  background: #19376d;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  14% {
+    transform: translate(-12px, -16px) (1.05);
+  }
+  28% {
+    transform: translate(-27px, -28px);
+  }
+  42% {
+    transform: translate(-46px, -35px);
+  }
+  57% {
+    transform: translate(-70px, -37px);
+  }
+  71% {
+    transform: translate(-94px, -32px);
+  }
+  85% {
+    transform: translate(-111px, -22px);
+  }
+  100% {
+    transform: translate(-125px, -9px);
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    box-shadow:
+      0 -6px,
+      -122.9px -8px;
+  }
+  25%,
+  75% {
+    box-shadow:
+      0 0px,
+      -122.9px -8px;
+  }
+  100% {
+    box-shadow:
+      0 0px,
+      -122.9px -16px;
+  }
+}
+
+/*  */
+
+/* start writer section */
+
+.writer .container .writer-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-size: 1.125rem;
+}
+
+.writer .container .writer-info img {
+  width: 35px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.writer .container .writer-info span {
+  display: block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--third-color);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.writer .container .writer-info .user-name {
+  color: #1c1c1c;
+}
+
+.writer .container .writer-info p {
+  color: #3c3c3c;
+}
+
+/* end writer section */
+/* start participants */
+.participants {
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e7e7;
+  width: max-content;
+  padding: 5px 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  -webkit-transition: var(--main-transition-duration);
+  -moz-transition: var(--main-transition-duration);
+  -ms-transition: var(--main-transition-duration);
+  -o-transition: var(--main-transition-duration);
+  transition: var(--main-transition-duration);
+}
+
+.participants:hover {
+  background-color: #bdbdbd;
+}
+
+.participants i {
+  margin-right: 10px;
+}
+
+.participants img {
+  width: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin-right: -10px;
+}
+
+/* end participants */
+
+/* start text box customization */
+.button-wrap {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
+.button-wrap .submit {
+  display: none;
+}
+
+.button-wrap .text-edit,
+.button-wrap .submit,
+.button-wrap .add-person {
+  background-color: var(--main-color);
+  color: var(--third-color);
+  border: 0;
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: var(--main-transition-duration);
+  -moz-transition: var(--main-transition-duration);
+  -ms-transition: var(--main-transition-duration);
+  -o-transition: var(--main-transition-duration);
+  transition: var(--main-transition-duration);
+}
+
+.button-wrap .text-edit:hover,
+.button-wrap .submit:hover,
+.button-wrap .add-person:hover {
+  background-color: var(--secondary-color);
+}
+
+.button-wrap .submit.show {
+  display: inline-block;
+}
+
+.text-box {
+  display: none;
+  width: 80vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.text-box.show {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+}
+
+/* end text box customization */
+
+/* start content display */
+.contentDisplay .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.8;
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+}
+
+.contentDisplay .container ul,
+.contentDisplay .container ol {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  .contentDisplay .container {
+    font-size: 0.8rem;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+/* @media (min-width: 1200px) {
+  .contentDisplay .container {
+    width: 800px;
+  }
+} */
+
+/* end content display */
+/* start image box url */
+.image-box .container {
+  display: none;
+}
+
+.image-box .container input {
+  outline: 0;
+  border: 2px solid var(--third-color);
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.image-box .container .submit-btn {
+  border: 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.image-box .container.active {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* end image box url */

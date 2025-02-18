@@ -1,0 +1,16 @@
+users = https://student-guide-users.ahmed-yehia.me
+
+courses= https://student-guide-course.ahmed-yehia.me
+
+frontend = https://guide.ahmed-yehia.me
+
+TA = https://ta.ahmed-yehia.me/ 
+
+=============================================
+PORTS 
+
+usre= 5001
+course = 5002
+Ta = 5003
+campus = 5004
+

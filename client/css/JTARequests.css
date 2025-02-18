@@ -1,0 +1,198 @@
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(50vh - 65px);
+  width: 100%;
+}
+.loader {
+  color: var(--third-color);
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 50px;
+  letter-spacing: 3.3px;
+  box-sizing: border-box;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
+  height: 28px;
+  width: 5.15px;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader1 1s linear infinite alternate;
+}
+.loader::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 125px;
+  top: 2px;
+  border-radius: 50%;
+  background: #19376d;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  14% {
+    transform: translate(-12px, -16px) (1.05);
+  }
+  28% {
+    transform: translate(-27px, -28px);
+  }
+  42% {
+    transform: translate(-46px, -35px);
+  }
+  57% {
+    transform: translate(-70px, -37px);
+  }
+  71% {
+    transform: translate(-94px, -32px);
+  }
+  85% {
+    transform: translate(-111px, -22px);
+  }
+  100% {
+    transform: translate(-125px, -9px);
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    box-shadow: 0 -6px, -122.9px -8px;
+  }
+  25%,
+  75% {
+    box-shadow: 0 0px, -122.9px -8px;
+  }
+  100% {
+    box-shadow: 0 0px, -122.9px -16px;
+  }
+}
+
+body {
+  background-color: #fcfcfc;
+}
+table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  min-width: 1000px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 30px;
+  font-size: 14px;
+}
+.container .JTARequests .JTARequests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+.container .JTARequests .JTARequests-header .JTARequests-header-title {
+  font-size: clamp(1.4rem, 3vw, 3rem);
+  color: var(--third-color);
+}
+
+.container .JTARequests .JTARequests-header .JTARequests-header-search input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  font-size: 16px;
+  font-size: clamp(0.7rem, 2vw, 1rem);
+}
+.container .JTARequests .JTARequests-content {
+  margin: 20px;
+  overflow: auto;
+}
+thead {
+  background-color: #e9edf3;
+  color: rgb(100, 100, 100);
+}
+thead th {
+  padding-top: 13px;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  padding-bottom: 13px;
+}
+tr td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+tr td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+thead tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+td:first-child,
+th:first-child {
+  width: 50px; /* Adjust as needed */
+}
+.JTARequests-content-table-table-btn {
+  padding: 5px;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.25s ease-in-out;
+  margin: 6px 3px;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.JTARequests-content-table-table-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+tr td:last-child {
+  word-break: normal;
+  justify-content: center;
+  display: flex;
+}
+.img-name-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+thead tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+}
+td img {
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  word-break: break-all;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+}
+tr {
+  transition: all 0.25s ease-in-out;
+}
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}

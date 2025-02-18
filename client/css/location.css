@@ -1,0 +1,386 @@
+.location {
+  margin: 0 0 150px 0;
+}
+.location .container .txt h2 {
+  position: relative;
+  color: var(--third-color);
+  padding: 30px 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.location .container .txt h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 55px;
+  background-color: var(--fourth-color);
+}
+
+.location .container .txt h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 1px;
+  width: 95%;
+  max-width: 255px;
+  background-color: var(--fourth-color);
+}
+
+.location .container .txt .description {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.location .container .txt .description p {
+  color: #585f63;
+  font-size: 1.1em;
+  line-height: 1.8em;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.location .container .txt .description p span {
+  color: var(--third-color);
+  font-weight: 600;
+}
+
+.location .container .txt .description img {
+  width: 20%;
+}
+
+@media (max-width: 767px) {
+  .location .container .txt .description {
+    flex-direction: column;
+    align-items: center;
+  }
+  .location .container .txt .description img {
+    width: 50%;
+  }
+}
+
+.location .carousel {
+  position: relative;
+}
+
+.location .carousel::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+}
+
+.location .carousel .txt {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  z-index: 1;
+  color: white;
+}
+
+.location .carousel .txt .container .title {
+  font-size: 45px;
+  margin: 0;
+}
+
+.location .carousel .txt .container .loca {
+  margin: 0;
+}
+
+.location .carousel .txt .container .description {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.location .slider {
+  width: 100vw;
+  height: calc(100vh - 50px);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  .location .mosque {
+    height: 400px;
+  }
+}
+
+.location .mosqueImg {
+  width: 100%;
+  height: 100%;
+}
+
+.location .slider .list {
+  position: absolute;
+  width: max-content;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  transition: 1s;
+}
+.location .slider .list img {
+  height: 100%;
+  width: 100vw;
+  object-fit: cover;
+}
+.location .slider .buttons {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.location .slider .buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--fourth-color);
+  color: #fff;
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 4;
+}
+
+@media (max-width: 767px) {
+  .location .slider .buttons button {
+    background-color: transparent;
+  }
+
+  .location .slider .buttons button i {
+    color: transparent;
+  }
+}
+
+.location .slider .dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.location .slider .dots li {
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 20px;
+  transition: 0.5s;
+  z-index: 5;
+}
+.location .slider .dots li.active {
+  width: 30px;
+}
+@media screen and (max-width: 768px) {
+  .location .slider {
+    height: 400px;
+  }
+}
+
+.location .container .card-location .search {
+  background-color: white;
+  position: relative;
+  margin-top: 50px;
+}
+
+.location .container .card-location .search {
+  position: relative;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location .container .card-location .search input {
+  border: 0;
+  padding: 10px;
+  background-color: transparent;
+  width: 100%;
+}
+
+.location .container .card-location .search input:focus {
+  outline: none;
+}
+.location .loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(50vh - 65px);
+  width: 100%;
+}
+.loader {
+  color: var(--third-color);
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 50px;
+  letter-spacing: 3.3px;
+  box-sizing: border-box;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
+  height: 28px;
+  width: 5.15px;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader1 1s linear infinite alternate;
+}
+.loader::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 125px;
+  top: 2px;
+  border-radius: 50%;
+  background: #19376d;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  14% {
+    transform: translate(-12px, -16px) (1.05);
+  }
+  28% {
+    transform: translate(-27px, -28px);
+  }
+  42% {
+    transform: translate(-46px, -35px);
+  }
+  57% {
+    transform: translate(-70px, -37px);
+  }
+  71% {
+    transform: translate(-94px, -32px);
+  }
+  85% {
+    transform: translate(-111px, -22px);
+  }
+  100% {
+    transform: translate(-125px, -9px);
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    box-shadow: 0 -6px, -122.9px -8px;
+  }
+  25%,
+  75% {
+    box-shadow: 0 0px, -122.9px -8px;
+  }
+  100% {
+    box-shadow: 0 0px, -122.9px -16px;
+  }
+}
+
+.location .container .card-location .search i {
+  background-color: var(--fourth-color);
+  color: white;
+  padding: 20px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  position: absolute;
+  right: -10px;
+}
+
+.location .container .card-location .card {
+  justify-content: space-between;
+  gap: 10px;
+}
+.location .container .card-location .card.hide {
+  display: none;
+}
+.location .container .card-location .card .card-title {
+  color: #576cbc;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: 6px 0;
+}
+.location .container .card-location .card .card-subtitle {
+  color: black;
+  font-size: clamp(0.5rem, 5vw, 1rem);
+  font-weight: 700;
+  margin: 0;
+}
+.location .container .card-location .card-wrap .card .card-head {
+  margin: 1.6rem 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location .container .card-location .card-wrap .card .card-status {
+  position: absolute;
+  font-size: clamp(0.5rem, 5vw, 0.9rem);
+  color: #c68e17;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  bottom: 3.7rem;
+  border-radius: 0 0 0 0.5rem;
+}
+
+.location .container .card-location .card img {
+  width: 80%;
+}
+
+.location .container .card-location .card .card-text {
+  color: gray;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.location .container .card-location .card .contactBtn {
+  color: white;
+  font-weight: 700;
+  border-radius: 40px;
+  background: #576cbc;
+  padding: 15px 15px;
+  margin: 0 0.5rem 1rem 0;
+  border: 0px;
+  cursor: pointer;
+  float: right;
+  box-shadow: 3px 20px 15px 5px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.location .container .card-location .card .contactBtn:hover {
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  transform: translate(-3px, -2px);
+}

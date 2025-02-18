@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.container {
+  padding: 2px 16px;
+  display: contents;
+}
+a {
+  text-decoration: none;
+}
+
+#OTP  , #newPass , #userName{
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #ddd;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.OTPCard {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: all 0.3s ease 0s;
+  align-items: center;
+  border-radius: 1.25rem;
+  --webkit-transition: 0.15s;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: float 3s infinite;
+}
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translate(-7px, -7px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.float-effect {
+  @apply animate-float;
+}
+.OTPCard:hover {
+  box-shadow: 0px 0px 150px 30px rgba(87, 108, 188, 0.4);
+  transform: translateY(-3px);
+  transition: all 0.5s ease-in-out;
+}
+#OTP input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+.containerr {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 3rem 7rem;
+}
+h1 b {
+  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 5rem;
+  color: var(--third-color);
+}
+
+.input {
+  width: 40px;
+  border: none;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+  margin: 0 10px;
+  text-align: center;
+  font-size: 36px;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.input:focus {
+  border-bottom: 3px solid orange;
+  outline: none;
+}
+
+.input:nth-child(1) {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+#OTPBtn , #resendOTPBtn {
+  width: 300px;
+  height: 40px;
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 30px;
+  background-color: #f2f2f2;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  outline: none;
+  color: var(--third-color);
+}
+
+#OTPBtn:hover , #resendOTPBtn:hover {
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  transition: all 0.5s ease-in-out;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  height: 90vh;
+  background-color: #f8f9fa;
+}
+@media screen and (max-width: 800px) {
+  .containerr {
+    margin: 3rem 2rem;
+  }
+  #OTP {
+    width: 200px;
+  }
+  .title {
+    font-size: 0.1rem;
+    font-weight: 700;
+    margin: 5rem;
+    color: var(--third-color);
+  }
+  #OTPBtn {
+    width: 200px;
+  }
+  .form-container {
+    height: 100vh;
+  }
+}

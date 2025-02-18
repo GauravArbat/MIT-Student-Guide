@@ -1,0 +1,541 @@
+.taDirectory {
+  margin: 40px 0;
+}
+
+.taDirectory .container .card-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+  margin: 50px 0;
+}
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(50vh - 65px);
+  width: 100%;
+}
+.loader {
+  color: var(--third-color);
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 50px;
+  letter-spacing: 3.3px;
+  box-sizing: border-box;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
+  height: 28px;
+  width: 5.15px;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader1 1s linear infinite alternate;
+}
+.loader::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 125px;
+  top: 2px;
+  border-radius: 50%;
+  background: #19376d;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  14% {
+    transform: translate(-12px, -16px) (1.05);
+  }
+  28% {
+    transform: translate(-27px, -28px);
+  }
+  42% {
+    transform: translate(-46px, -35px);
+  }
+  57% {
+    transform: translate(-70px, -37px);
+  }
+  71% {
+    transform: translate(-94px, -32px);
+  }
+  85% {
+    transform: translate(-111px, -22px);
+  }
+  100% {
+    transform: translate(-125px, -9px);
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    box-shadow: 0 -6px, -122.9px -8px;
+  }
+  25%,
+  75% {
+    box-shadow: 0 0px, -122.9px -8px;
+  }
+  100% {
+    box-shadow: 0 0px, -122.9px -16px;
+  }
+}
+/* .loader {
+  display: block;
+  position: relative;
+  height: 30px;
+  width: 200px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #19376d;
+  animation: ballbns 2s ease-in-out infinite;
+}
+
+@keyframes ballbns {
+  0% {
+    left: 0;
+    transform: translateX(0%);
+    box-shadow: -5px 0 0 -1px rgba(87, 108, 188, 0.9),
+      -10px 0 0 -2px rgba(87, 108, 188, 0.8),
+      -15px 0 0 -4px rgba(87, 108, 188, 0.6),
+      -20px 0 0 -6px rgba(87, 108, 188, 0.4),
+      -25px 0 0 -8px rgba(87, 108, 188, 0.2);
+  }
+  49% {
+    left: 100%;
+    transform: translateX(-100%);
+    box-shadow: -5px 0 0 -1px rgba(87, 108, 188, 0.9),
+      -10px 0 0 -2px rgba(87, 108, 188, 0.8),
+      -15px 0 0 -4px rgba(87, 108, 188, 0.6),
+      -20px 0 0 -6px rgba(87, 108, 188, 0.4),
+      -25px 0 0 -8px rgba(87, 108, 188, 0.2);
+  }
+  51% {
+    left: 100%;
+    transform: translateX(-100%);
+    box-shadow: 5px 0 0 -1px rgba(87, 108, 188, 0.9),
+      10px 0 0 -2px rgba(87, 108, 188, 0.8),
+      15px 0 0 -4px rgba(87, 108, 188, 0.6),
+      20px 0 0 -6px rgba(87, 108, 188, 0.4),
+      25px 0 0 -8px rgba(87, 108, 188, 0.2);
+  }
+  100% {
+    left: 0;
+    transform: translateX(0%);
+    box-shadow: 5px 0 0 -1px rgba(87, 108, 188, 0.9),
+      10px 0 0 -2px rgba(87, 108, 188, 0.8),
+      15px 0 0 -4px rgba(87, 108, 188, 0.6),
+      20px 0 0 -6px rgba(87, 108, 188, 0.4),
+      25px 0 0 -8px rgba(87, 108, 188, 0.2);
+  }
+} */
+
+/* start search bar */
+
+.taDirectory .container .search-bar {
+  position: relative;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.taDirectory .container .search-bar input {
+  border: 0;
+  padding: 10px;
+  background-color: transparent;
+  padding: 15px;
+  width: 100%;
+}
+.taDirectory .container .search-bar .search-text .ta-search {
+  position: relative;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px;
+  padding: 12px 15px;
+}
+#TASearchSwitch {
+  opacity: 0;
+}
+#courseSearchSwitch {
+  opacity: 0;
+}
+input[type="chechbox"]:checked + #TASearchSwitch {
+  background-color: black;
+}
+input[type="chechbox"]:checked + .course-search {
+  background-color: black;
+  color: black;
+}
+input[type="chechbox"]:checked + .course-search::before {
+  background-color: black;
+  color: black;
+  left: 42px;
+}
+.taDirectory .container .search-bar .search-text .course-search {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2px 0 2px 3px;
+  padding: 12px 15px;
+}
+.taDirectory .container .search-bar .search-text .course-search:checked {
+  background-color: black;
+}
+
+.taDirectory .container .search-bar .search-text .innerSearch {
+  display: flex;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.07);
+  border: 5px;
+  border-color: black;
+  border-radius: 50px;
+  left: -12px;
+}
+
+@media (max-width: 767px) {
+  .taDirectory .container .search-bar input {
+    width: 100%;
+  }
+}
+
+.taDirectory .container .search-bar input:focus {
+  outline: none;
+}
+
+.taDirectory .container .search-bar span {
+  color: var(--secondary-color);
+}
+
+.taDirectory .container .search-bar .search-text {
+  position: absolute;
+  right: -10px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  color: var(--third-color);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  padding: 18px;
+}
+.taDirectory .container .search-bar .search-text {
+  padding: 0;
+  margin: 0;
+}
+
+.taDirectory .container .search-bar .switch {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.taDirectory .container .search-bar .switch input {
+  appearance: none;
+  width: 170px;
+  height: 50px;
+  border-radius: 50px;
+  outline: none;
+}
+.taDirectory .container .search-bar .switch input::before,
+.taDirectory .container .search-bar .switch input::after {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  font-weight: bolder;
+}
+.taDirectory .container .search-bar .switch input::before {
+  content: "TAs";
+  left: 30px;
+}
+.taDirectory .container .search-bar .switch input::after {
+  content: "Courses";
+  right: 20px;
+}
+
+.taDirectory .container .search-bar .switch input:checked {
+  background: var(--fourth-color);
+}
+.taDirectory .container .search-bar .switch label {
+  z-index: 1;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 50px;
+}
+.taDirectory .container .search-bar .switch input {
+  transition: 0.25s;
+}
+
+.taDirectory .container .search-bar .switch input:checked::after,
+.taDirectory .container .search-bar .switch input:checked::before {
+  color: var(--main-color);
+  transition: color 0.3s;
+}
+
+.taDirectory .container .search-bar .switch input:checked::before {
+  color: var(--fourth-color);
+  transition: color 0.3s;
+}
+.taDirectory .container .search-bar .switch input:checked + label {
+  right: 85px;
+  left: 5px;
+  background: var(--third-color);
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+.taDirectory .container .search-bar .switch input:not(:checked) {
+  background: var(--fourth-color);
+  transition: background 0.5s;
+} 
+.taDirectory .container .search-bar .switch input:not(:checked)::before {
+  color: var(--main-color);
+  transition: color 0.5s;
+}
+.taDirectory .container .search-bar .switch input:not(:checked)::after {
+  color: var(--fourth-color);
+  transition: color 0.5s 0.2s;
+}
+.taDirectory .container .search-bar .switch input:not(:checked) + label {
+  left: 75px;
+  right: 5px;
+  background: var(--third-color);
+  transition: left 0.4s 0.2s, right 0.4s, background 0.35s;
+}
+
+@media (max-width: 767px) {
+  .taDirectory .container .search-bar .search-text {
+    font-size: 12px;
+  }
+}
+/* end serach bar */
+
+/* start card */
+.taDirectory .container .card {
+  padding: 0 1rem;
+  -webkit-border-radius: 1.25rem;
+  -moz-border-radius: 1.25rem;
+  -ms-border-radius: 1.25rem;
+  -o-border-radius: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid;
+  box-shadow: 7px 7px 0px 3px var(--secondary-color);
+  transition: 0.15s;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -ms-transition: 0.15s;
+  -o-transition: 0.15s;
+  cursor: pointer;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.taDirectory .container .card:hover {
+  box-shadow: 13px 13px 0px 3px var(--main-color);
+}
+
+.taDirectory .container .card .delete-button {
+  background-color: var(--fourth-color);
+  font-weight: 800;
+  padding: 8px 15px;
+  margin-top: 10px;
+  display: block;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  border-radius: 40px;
+  color: white;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.taDirectory .container .card .delete-button:hover {
+  background-color: #e06c75;
+}
+
+.taDirectory .container .card.hide {
+  display: none;
+}
+
+.taDirectory .container .card .taWrapper .course {
+  font-weight: 800;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  border-radius: 40px;
+  color: var(--third-color);
+  background-color: rgba(0, 0, 0, 0.04);
+  box-shadow: 3px 20px 15px 5px rgba(0, 0, 0, 0.07);
+  padding: 15px;
+  margin: 0 0.5rem 1rem 0;
+  width: fit-content;
+  text-transform: capitalize;
+  font-size: clamp(0.5rem, 5vw, 1.1rem);
+  overflow: hidden;
+  float: left;
+  transition: transform 0.3s ease-in-out, background-color 0.2s ease-in-out;
+}
+.taDirectory .container .card .taWrapper .course:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.taDirectory .container .card .wrap {
+  margin: 10px 0;
+  height: 100%;
+}
+
+.taDirectory .container .card .wrap p {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.taDirectory .container .card .wrap .answer {
+  line-height: 1.5;
+  color: gray;
+  font-weight: 300;
+  font-size: 1rem;
+  margin-top: 5px;
+  overflow: auto;
+}
+
+.taDirectory .container .card .wrap a {
+  color: black;
+  margin-top: 5px;
+}
+
+.taDirectory .container .card .taWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 10px;
+}
+
+.taDirectory .container .card .card-head .genderImg {
+  width: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  box-shadow: 3px 20px 15px 5px rgba(0, 0, 0, 0.07);
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  float: right;
+  transition: transform 0.4s ease-in-out;
+}
+.taDirectory .container .card .card-head .genderImg:hover {
+  transform: scale(1.1);
+}
+
+.taDirectory .container .card .card-head .ta-name {
+  color: var(--third-color);
+  font-size: clamp(1.5rem, 5vw, 1.8rem);
+  margin: 6px 0;
+  /* filter: drop-shadow(-5px 15px 20px rgba(0, 0, 0, 0.5)); */
+}
+.taDirectory .container .card .card-head {
+  margin: 1.6rem 0;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.taDirectory .container .card .taWrapper .contactBtn {
+  color: white;
+  font-weight: 700;
+  border-radius: 40px;
+  background: #576cbc;
+  padding: 15px 15px;
+  margin: 0 0.5rem 1rem 0;
+  border: 0px;
+  cursor: pointer;
+  float: right;
+  box-shadow: 3px 20px 15px 5px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.taDirectory .container .card .taWrapper .contactBtn:hover {
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  transform: translate(-3px, -2px);
+}
+
+/* end card */
+/* start admin buttons */
+.taDirectory .container .admin-buttons {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.taDirectory .container .addTaBtn {
+  border-radius: 0.65rem;
+  padding: 10px 12px;
+  background-color: var(--third-color);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  color: white;
+  -webkit-border-radius: 0.65rem;
+  -moz-border-radius: 0.65rem;
+  -ms-border-radius: 0.65rem;
+  -o-border-radius: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.taDirectory .container .addTaBtn:hover {
+  box-shadow: hsla(228, 43%, 54%, 0.4) 5px 5px,
+    hsla(228, 43%, 54%, 0.3) 10px 10px, hsla(228, 43%, 54%, 0.2) 15px 15px,
+    hsla(228, 43%, 54%, 0.1) 20px 20px, hsla(228, 43%, 54%, 0.05) 25px 25px;
+}
+
+@media (max-width: 767px) {
+  .taDirectory .container .admin-buttons {
+    margin-bottom: 100px;
+  }
+}
+/* end admin buttons */

@@ -1,0 +1,405 @@
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(50vh - 65px);
+  width: 100%;
+}
+.loader {
+  color: var(--third-color);
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 50px;
+  letter-spacing: 3.3px;
+  box-sizing: border-box;
+}
+.loader::before {
+  content: '';  
+  position: absolute;
+  right: 70px;
+  bottom: 10px;
+  height: 28px;
+  width: 5.15px;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader1 1s linear infinite alternate;
+}
+.loader::after {
+  content: '';  
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 125px;
+  top: 2px;
+  border-radius: 50%;
+  background: #19376d;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite alternate;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translate(0px, 0px) ;
+  }
+  14% {
+    transform: translate(-12px, -16px) (1.05);
+  }
+  28% {
+    transform: translate(-27px, -28px) ;
+  }
+  42% {
+    transform: translate(-46px, -35px) ;
+  }
+  57% {
+    transform: translate(-70px, -37px) ;
+  }
+  71% {
+    transform: translate(-94px, -32px) ;
+  }
+  85% {
+    transform: translate(-111px, -22px) ;
+  }
+  100% {
+    transform: translate(-125px, -9px) ;
+  }
+}
+
+@keyframes animloader1 {
+  0% {
+    box-shadow: 0 -6px, -122.9px -8px;
+  }
+  25%, 75% {
+    box-shadow: 0 0px, -122.9px -8px;
+  }
+  100% {
+    box-shadow: 0 0px, -122.9px -16px;
+  }
+}
+.gpaCalc .container .txt h2 {
+  position: relative;
+  color: var(--third-color);
+  padding: 30px 0;
+  margin: 0;
+  margin-bottom: 0px;
+  margin-bottom: 20px;
+}
+
+.gpaCalc .container .txt h2 span {
+  color: #e06c75;
+}
+
+.gpaCalc .container .txt h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 55px;
+  background-color: var(--fourth-color);
+}
+.gpaCalc .container .txt h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 1px;
+  width: 95%;
+  max-width: 255px;
+  background-color: var(--fourth-color);
+}
+.gpaCalc .container .txt .description {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.gpaCalc .container .txt .description img {
+  width: 20%;
+}
+
+@media (max-width: 767px) {
+  .gpaCalc .container .txt .description {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gpaCalc .container .txt .description img {
+    width: 50%;
+  }
+}
+
+.gpaCalc .container .txt .description p span {
+  color: var(--third-color);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+.gpaCalc .container .txt .description p {
+  color: #585f63;
+  font-size: 1.1em;
+  line-height: 1.8em;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+.gpaCalc .container form .subject-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 40px;
+  margin: 20px 0;
+}
+
+@media (max-width: 767px) {
+  .gpaCalc .container form .subject-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.gpaCalc .container form .subject-buttons .sem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -ms-transition: 0.15s;
+  -o-transition: 0.15s;
+  transition: var(--main-transition-duration);
+  -webkit-border-radius: 1.25rem;
+  -moz-border-radius: 1.25rem;
+  -ms-border-radius: 1.25rem;
+  -o-border-radius: 1.25rem;
+  border-radius: 1.25rem;
+  border: 1px solid;
+  box-shadow: 7px 7px 0px 3px var(--secondary-color);
+  transition: 0.15s;
+  -webkit-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -ms-transition: 0.15s;
+  -o-transition: 0.15s;
+  cursor: pointer;
+  padding: 30px 20px;
+}
+
+.gpaCalc .container form .subject-buttons .sem:hover {
+  box-shadow: 13px 13px 0px 3px var(--main-color);
+}
+
+.gpaCalc .container form .subject-buttons .sem h4 {
+  margin: 0;
+  padding: 0;
+  transition: 0.25s;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
+}
+
+.gpaCalc .container form .subject-buttons .sem:hover h4 {
+  color: var(--fourth-color);
+  border-bottom: 1px solid var(--fourth-color);
+}
+
+.gpaCalc .container form .subject-buttons .sem .selectAllWrap,
+.gpaCalc .container form .subject-buttons .sem .choiceWrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.gpaCalc .container form .subject-buttons .sem .selectAllWrap:not(:last-child),
+.gpaCalc .container form .subject-buttons .sem .choiceWrap:not(:last-child) {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.196);
+}
+
+.gpaCalc .container form .subject-buttons .sem .choiceWrap select {
+  border: 0;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  padding: 10px;
+  background-color: white;
+  color: gray;
+}
+
+.gpaCalc .container form .subject-buttons .sem .selectAllWrap p,
+.gpaCalc .container form .subject-buttons .sem .choiceWrap p {
+  margin: 0;
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper label {
+  --size: 1.8rem;
+  --shadow: calc(var(--size) * 0.07) calc(var(--size) * 0.1);
+
+  position: relative;
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  margin: 0 auto;
+  /* background-color: #f72414; */
+  background-color: var(--third-color);
+  border-radius: 50%;
+  /* box-shadow: 0 var(--shadow) #ffbeb8; */
+  cursor: pointer;
+  transition:
+    0.2s ease transform,
+    0.2s ease background-color,
+    0.2s ease box-shadow;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.gpaCalc .container form .subject-buttons .sem .selectAllWrap .checkbox-wrapper label {
+  background-color: var(--fourth-color);
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper label:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  width: calc(var(--size) * 0.7);
+  height: calc(var(--size) * 0.7);
+  margin: 0 auto;
+  background-color: #fff;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  /* box-shadow: inset 0 var(--shadow) #ffbeb8; */
+  transition:
+    0.2s ease width,
+    0.2s ease height;
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper label:hover:before {
+  width: calc(var(--size) * 0.55);
+  height: calc(var(--size) * 0.55);
+  /* box-shadow: inset 0 var(--shadow) #ff9d96; */
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper label:active {
+  transform: scale(0.9);
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper .tickMark {
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: calc(var(--size) * -0.05);
+  width: calc(var(--size) * 0.6);
+  height: calc(var(--size) * 0.6);
+  margin: 0 auto;
+  margin-left: calc(var(--size) * 0.14);
+  transform: rotateZ(-40deg);
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper .tickMark:before,
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper .tickMark:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  border-radius: 2px;
+  opacity: 0;
+  transition:
+    0.2s ease transform,
+    0.2s ease opacity;
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper .tickMark:before {
+  left: 0;
+  bottom: 0;
+  width: calc(var(--size) * 0.1);
+  height: calc(var(--size) * 0.3);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.23);
+  transform: translateY(calc(var(--size) * -0.68));
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper .tickMark:after {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(var(--size) * 0.1);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.23);
+  transform: translateX(calc(var(--size) * 0.78));
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper input[type="checkbox"]:checked + label {
+  background-color: #07d410;
+  box-shadow: 0 var(--shadow) #92ff97;
+}
+
+.gpaCalc .container form .subject-buttons .sem .checkbox-wrapper input[type="checkbox"]:checked + label:before {
+  width: 0;
+  height: 0;
+}
+
+.gpaCalc
+  .container
+  form
+  .subject-buttons
+  .sem
+  .checkbox-wrapper
+  input[type="checkbox"]:checked
+  + label
+  .tickMark:before,
+.gpaCalc
+  .container
+  form
+  .subject-buttons
+  .sem
+  .checkbox-wrapper
+  input[type="checkbox"]:checked
+  + label
+  .tickMark:after {
+  transform: translate(0);
+  opacity: 1;
+}
+
+.gpaCalc .container form button {
+  background-color: var(--third-color);
+  color: white;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 50px auto 100px;
+  border: 0;
+}
+
+.gpaCalc .container form button:hover {
+  box-shadow:
+    hsla(228, 43%, 54%, 0.4) 5px 5px,
+    hsla(228, 43%, 54%, 0.3) 10px 10px,
+    hsla(228, 43%, 54%, 0.2) 15px 15px,
+    hsla(228, 43%, 54%, 0.1) 20px 20px,
+    hsla(228, 43%, 54%, 0.05) 25px 25px;
+}
