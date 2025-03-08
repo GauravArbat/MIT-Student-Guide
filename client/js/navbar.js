@@ -93,7 +93,7 @@ let dropdownItems = [
   { name: "Apply for JTA", link: "html/JTA.html" },
   {
     name: "Feedback",
-    link: "#",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSdDtAs4eoyWzjABwTlLppcLFuJNBoziim2a4ooIYU7xXcyVTg/viewform",
   },
   { name: "Logout", link: "html/login.html" },
 ];
@@ -103,7 +103,7 @@ if ("/client/index.html" !== location.pathname) {
     { name: "Apply for JTA", link: "../html/JTA.html" },
     {
       name: "Feedback",
-      link: "#",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSdDtAs4eoyWzjABwTlLppcLFuJNBoziim2a4ooIYU7xXcyVTg/viewform",
     },
     { name: "Logout", link: "../html/login.html" },
   ];

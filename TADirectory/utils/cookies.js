@@ -2,53 +2,41 @@ const jwt = require("jsonwebtoken");
 const secret = process.env.ACCESS_TOKEN_SECRET;
 const refreshSecret = process.env.REFRESH_TOKEN_SECRET;
 
-function getEntriesFromCookie(req, res) {
+function getEntriesFromCookie(req) {
   let authCookie = "";
   let refreshToken = "";
-
-  if (req.headers.cookie) {
-    if (req.headers.cookie.includes("authcookie")) {
-      authCookie = req.headers.cookie?.split("authcookie=")[1]?.split(";")[0] || "";
-    }
-    if (req.headers.cookie.includes("refreshToken")) {
-      refreshToken = req.headers.cookie?.split("refreshToken=")[1]?.split(";")[0] || "";
-    }
+  if (req.headers.cookie.includes("authcookie")) {
+    authCookie = req.headers.cookie.split("authcookie=")[1].split(";")[0];
   }
 
-  if (!authCookie && !refreshToken) {
-    console.error("No tokens found in cookies");
-    return null;
+  if (req.headers.cookie.includes("refreshToken")) {
+    refreshToken = req.headers.cookie.split("refreshToken=")[1].split(";")[0];
   }
 
   try {
     // Verify the access token
     const decodedAccessToken = jwt.verify(authCookie, secret);
+
+    // If the access token is valid, return its payload
     return decodedAccessToken;
   } catch (accessError) {
-    console.error("Access token error:", accessError.message);
-
-    // Try using refresh token if access token fails
+    // Access token has expired or is invalid, let's try to use the refresh token
     try {
+      // Verify the refresh token
       const decodedRefreshToken = jwt.verify(refreshToken, refreshSecret);
       const { email, isAdmin } = decodedRefreshToken;
-      
-      // Generate a new access token
-      const newAccessToken = jwt.sign({ email, isAdmin }, secret, { expiresIn: "2h" });
+      const newAccessToken = jwt.sign({ email, isAdmin }, secret, {
+        expiresIn: "2h",
+      });
+      // Generate a new access token with the same payload data as the one we just decoded
+      //decode it
       const newDecodedToken = jwt.verify(newAccessToken, secret);
-
-      // Set new access token in cookie (if response object available)
-      if (res) {
-        res.cookie("authcookie", newAccessToken, {
-          httpOnly: true,
-          secure: process.env.NODE_ENV === "production",
-          sameSite: "Strict",
-        });
-      }
 
       return newDecodedToken;
     } catch (refreshError) {
-      console.error("Refresh token verification error:", refreshError.message);
-      return null;
+      // Both access and refresh tokens are invalid, handle the error
+      console.error("Token verification error:", refreshError);
+      return null; // Return null or handle the error as needed
     }
   }
 }
